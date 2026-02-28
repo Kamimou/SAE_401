@@ -4,7 +4,7 @@
   color: #fff;
   padding: 1rem 0;
 }
-.logo { height: 60px; display: block; }
+.logo { height: 85px; display: block; }
 .main-header .container { display:flex; align-items:center; justify-content:space-between; width:100%; padding: 0 20px; }
 nav a { color: #fff; margin-left: 1.5rem; text-decoration:none; font-weight:600; }
 nav a.active { text-decoration: none; }
