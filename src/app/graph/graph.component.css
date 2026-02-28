@@ -1,0 +1,82 @@
+/* reuse same header/footer colors as home */
+.main-header {
+  background-color: #15639c;
+  color: #fff;
+  padding: 1rem 0;
+}
+.logo { height: 60px; display: block; }
+.main-header .container { display:flex; align-items:center; justify-content:space-between; width:100%; padding: 0 20px; }
+nav a { color: #fff; margin-left: 1.5rem; text-decoration:none; font-weight:600; }
+nav a.active { text-decoration: none; }
+
+/* overall layout container */
+.main-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 300px;
+  min-width: 300px;
+  padding: 30px 20px 30px 30px;
+  border-right: 3px solid #2c5d7c;
+  box-sizing: border-box;
+  /* make sidebar span full height */
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* important */
+}
+
+/* typography and spacing */
+.search {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.search input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 2px solid #15639c;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.search::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%2315639c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2a8 8 0 105.29 13.71l5 5a1 1 0 001.42-1.42l-5-5A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+  color: #2c5d7c;
+  margin-bottom: 40px;
+}
+
+/* menu inside sidebar */
+.menu-title { background: #15639c; color: #fff; padding: 0.5rem 1rem; border-radius: 999px; display:inline-block; margin-bottom:1rem; font-size:1rem; }
+.menu ul { list-style: none; padding:0; margin:0; color:#0b3b55; font-size:0.95rem; }
+.separator { height:6px; display:block; background:#155a82; margin:1rem 0; }
+
+.graph-area { width: 100%; min-height: 400px; }
+
+.site-footer { background-color: #15639c; color:#fff; text-align:center; padding:1rem 0; position:fixed; bottom:0; left:0; width:100%; }
+
+/* ensure main content not hidden by fixed footer */
+.content { padding-bottom: 4rem; }
+
