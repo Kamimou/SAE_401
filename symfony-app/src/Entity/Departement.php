@@ -58,9 +58,6 @@ class Departement
         return $this;
     }
 
-    /**
-     * @return Collection<int, Criteres>
-     */
     public function getCriteres(): Collection
     {
         return $this->criteres;
@@ -78,7 +75,6 @@ class Departement
     public function removeCritere(Criteres $critere): static
     {
         if ($this->criteres->removeElement($critere)) {
-            // set the owning side to null (unless already changed)
             if ($critere->getDepartement() === $this) {
                 $critere->setDepartement(null);
             }
@@ -86,4 +82,3 @@ class Departement
         return $this;
     }
 }
-
