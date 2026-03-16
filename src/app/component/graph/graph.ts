@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { RouterLink } from '@angular/router';
 import { LogementService } from '../../services/logement';
 
 @Component({
@@ -8,7 +7,7 @@ import { LogementService } from '../../services/logement';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './graph.html',
-  styleUrl: './graph.css'
+  styleUrls: ['./graph.css']
 })
 export class GraphComponent implements OnInit {
   logements: any[] = [];
@@ -16,10 +15,14 @@ export class GraphComponent implements OnInit {
   constructor(private logementService: LogementService) {}
 
   ngOnInit(): void {
-    this.logementService.getLogements().subscribe((data) => {
-      this.logements = data;
-      console.log(this.logements);
+    this.logementService.getLogements().subscribe({
+      next: (data) => {
+        console.log('Données API reçues :', data);
+        this.logements = [...data];
+      },
+      error: (err) => {
+        console.error('Erreur API :', err);
+      }
     });
   }
- 
 }
