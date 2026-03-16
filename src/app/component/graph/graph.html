@@ -1,27 +1,56 @@
+<header class="main-header">
+  <div class="container">
+    <a routerLink="/" class="logo-link" aria-label="Accueil">
+      <img src="/assets/images/logo.png" alt="Observatoire du Logement Social" class="logo" />
+    </a>
+    <nav>
+      <a routerLink="/" class="nav-link">Accueil</a>
+      <a routerLink="/graphique" class="nav-link active">Graphique</a>
+    </nav>
+  </div>
+</header>
+
 <main class="page-container">
-    <div class="container">
-        <h1 class="title">Analyse des indicateurs du logement social</h1>
+  <div class="container">
+    <h1 class="title">Analyse des indicateurs du logement social</h1>
 
-        <div class="search-container">
-            <div class="search">
-                <input placeholder="Recherche" />
-            </div>
-        </div>
-
-        <div class="content-layout">
-            <div class="left-card">
-                <div class="menu-title">Contenue</div>
-                <ul>
-                    <li>Indicateurs démographiques</li>
-                    <li>Indicateurs socio-économiques</li>
-                    <li class="separator"></li>
-                    <li>Indicateurs liés au logement / habitat</li>
-                </ul>
-            </div>
-
-            <div class="graph-area">
-                <!-- zone principale pour les graphiques -->
-            </div>
-        </div>
+    <div class="search-container">
+      <div class="search">
+        <input placeholder="Recherche" />
+      </div>
     </div>
+
+    <div class="content-layout">
+      <div class="left-card">
+        <div class="menu-title">Contenue</div>
+        <ul>
+          <li>Indicateurs démographiques</li>
+          <li>Indicateurs socio-économiques</li>
+          <li class="separator"></li>
+          <li>Indicateurs liés au logement / habitat</li>
+        </ul>
+      </div>
+
+      <div class="graph-area">
+        <h2>Données API</h2>
+        <!-- <pre>{{ logements | json }}</pre> -->
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Nombre logements</th>
+            <th>Construction</th>
+          </tr>
+          <tr *ngFor="let logement of logements">
+            <td>{{ logement.id }}</td>
+            <td>{{ logement.nombreLogement }}</td>
+            <td>{{ logement.construction }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </main>
+
+<footer class="site-footer">
+  © 2026 Observatoire du Logement Social – Données publiques
+</footer>
