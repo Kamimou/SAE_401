@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { LogementService } from '../services/logement';
+// import { RouterLink } from '@angular/router';
+import { LogementService } from '../../services/logement';
 
 @Component({
   selector: 'app-graph',
   standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './graph.component.html',
-  styleUrl: './graph.component.css'
+  imports: [CommonModule],
+  templateUrl: './graph.html',
+  styleUrl: './graph.css'
 })
 export class GraphComponent implements OnInit {
   logements: any[] = [];
@@ -21,4 +21,5 @@ export class GraphComponent implements OnInit {
       console.log(this.logements);
     });
   }
+ 
 }

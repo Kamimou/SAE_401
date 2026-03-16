@@ -1,8 +1,8 @@
 import { ApplicationConfig, importProvidersFrom, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { GraphComponent } from './graph/graph.component';
+import { Home } from './component/home/home';
+import { GraphComponent } from './component/graph/graph';
 import { CommonModule } from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
@@ -11,7 +11,8 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     importProvidersFrom(CommonModule),
     provideRouter([
-      { path: '', component: HomeComponent },
+      { path: '', component: Home },
+      
       { path: 'graphique', component: GraphComponent },
     ])
   ]

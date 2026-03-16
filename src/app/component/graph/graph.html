@@ -1,14 +1,4 @@
-<header class="main-header">
-  <div class="container">
-    <a routerLink="/" class="logo-link" aria-label="Accueil">
-      <img src="/assets/images/logo.png" alt="Observatoire du Logement Social" class="logo" />
-    </a>
-    <nav>
-      <a routerLink="/" class="nav-link">Accueil</a>
-      <a routerLink="/graphique" class="nav-link active">Graphique</a>
-    </nav>
-  </div>
-</header>
+
 
 <main class="page-container">
   <div class="container">
@@ -41,9 +31,9 @@
             <th>Construction</th>
           </tr>
           <tr *ngFor="let logement of logements">
-            <td>{{ logement.id }}</td>
-            <td>{{ logement.nombreLogement }}</td>
-            <td>{{ logement.construction }}</td>
+            <td>{{logement.id}}</td>
+            <td>{{logement.nombreLogement}}</td>
+            <td>{{logement.construction}}</td>
           </tr>
         </table>
       </div>
