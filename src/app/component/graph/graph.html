@@ -30,10 +30,10 @@
             <th>Nombre logements</th>
             <th>Construction</th>
           </tr>
-          <tr *ngFor="let logement of logements">
-            <td>{{logement.id}}</td>
-            <td>{{logement.nombreLogement}}</td>
-            <td>{{logement.construction}}</td>
+          <tr *ngFor="let logement of logements$ | async">
+            <td>{{logement?.id}}</td>
+            <td>{{logement?.nombreLogement}}</td>
+            <td>{{logement?.construction}}</td>
           </tr>
         </table>
       </div>
